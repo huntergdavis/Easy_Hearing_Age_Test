@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<com.google.ads.AdView android:id="@+id/adView"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentTop="true" ads:adUnitId="a14df9299461895"
+		ads:adSize="BANNER" ads:loadAdOnCreate="false" />
+	<TextView android:text="Select The Highest Audible Frequency"
+		android:id="@+id/freqatext" android:layout_width="fill_parent"
+		android:layout_below="@+id/adView" android:layout_height="wrap_content"></TextView>
+
+	<TextView android:text="Current Audio Frequency is: 15000hz"
+		android:id="@+id/freqtext" android:layout_width="fill_parent"
+		android:layout_below="@+id/freqatext" android:layout_height="wrap_content"></TextView>
+
+	<SeekBar android:id="@+id/freq" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:max="100"
+		android:progress="50"   android:layout_below="@+id/freqtext" />
+
+	<TextView android:text="Your Current Hearing Age is: 50 years old"
+		android:id="@+id/agetext" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_below="@+id/freq"></TextView>
+
+	<TextView android:text="Explanation:" android:id="@+id/explanationheadertext"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_below="@+id/agetext"></TextView>
+
+	<TextView
+		android:text="Based on the currently selected frequency, you fall into the middle age range."
+		android:id="@+id/explanationtext" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_below="@+id/explanationheadertext"></TextView>
+
+	<TextView android:text="Bonus - Generate specific frequencies to test."
+		android:id="@+id/belowtext" android:layout_above="@+id/frequencytable"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+
+	<TableRow android:layout_alignParentBottom="true"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:id="@+id/frequencytable">
+		<Button android:id="@+id/freqbutton" android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:text="Play Frequency Hz" />
+		<EditText android:layout_width="fill_parent" android:id="@+id/freqbonus"
+			android:text="1200" android:numeric="decimal" android:layout_height="wrap_content"></EditText>
+	</TableRow>
+
+
+</RelativeLayout>
